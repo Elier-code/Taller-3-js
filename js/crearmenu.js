@@ -10,7 +10,8 @@ function obtenerRutaImagen(rutaImagen){
     for (var i = 0; i < profundidad; i++) {
         ruta += "../"
     }
-    var rutaCompletaImg = ruta + rutaImagen
+    var rutaCompletaImg = ruta
+    rutaCompletaImg += rutaImagen
     console.log(rutaCompletaImg)
     var logo = document.createElement("img")
     logo.src = rutaCompletaImg
