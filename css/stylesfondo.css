@@ -1,0 +1,11 @@
+body {
+    background-color: #1D1D1D;
+    color: #1D1D1D;
+    height: 100%;
+    margin: 0;
+    font-size: 30px;
+}
+.contenedor{
+    background: linear-gradient(#1D1D1D , #F8F9FA);
+    height: 99vh;
+}

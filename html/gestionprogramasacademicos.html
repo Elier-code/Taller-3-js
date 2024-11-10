@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/stylesfondo.css">
+    <link rel="stylesheet" href="../css/stylesformulario.css">
+    <script src="../js/crearmenu.js"></script>
+    <title>Gestionar Programas Academicos</title>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="nav"></div>
+        <div class="formulario">
+            <form action="">
+                <h2>Gestionar Programas Academicos</h2>
+                <label for="codgPrograma">Codigo Programa :</label>
+                <input type="text" id="codgPrograma" required>
+                <label for="nombrePrograma">Nombre Programa:</label>
+                <input type="text" id="nombrePrograma" required>
+                <label for="duracion">Duracion :</label>
+                <input type="number" id="duracion" required>
+                <label for="modalidad">Modalidad:</label>
+                <input list="modalidad">
+                <datalist list="modalidad" id="modalidad">
+                    <option value="Presencial"></option>
+                    <option value="Virtual"></option>
+                    <option value="Semipresencial"></option>
+                </datalist>
+                <label for="fecha">Fecha de inicio:</label>
+                <input type="date" id="fecha">
+            </form>
+            <button>Guardar</button>
+            <button>Actualizar</button>
+            <button>Eliminar</button>
+            <button>Consultar</button>
+        </div>
+    </div>
+</body>
+</html>
