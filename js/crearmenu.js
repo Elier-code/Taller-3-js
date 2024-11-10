@@ -10,13 +10,16 @@ function obtenerRutaImagen(rutaImagen){
     for (var i = 0; i < profundidad; i++) {
         ruta += "../"
     }
-    ruta += rutaImagen
-    console.log(ruta)
+    var rutaCompletaImg = ruta + rutaImagen
+    console.log(rutaCompletaImg)
     var logo = document.createElement("img")
-    logo.src = ruta
+    logo.src = rutaCompletaImg
     logo.alt = "Logo de la Universidad"
     //logo.style.filter='drop-shadow( 0 0 9px #0d170c)';
     imagen = logo
+    opciones = opciones.map(opcion =>{
+        return [opcion[0], ruta + opcion[1]]
+    })
 }
 document.addEventListener('DOMContentLoaded',() => {
     var contenedor = document.getElementsByClassName("nav")[0]
