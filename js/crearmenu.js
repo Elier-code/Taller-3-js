@@ -5,7 +5,8 @@ var opciones = [
 ]
 var imagen
 function obtenerRutaImagen(rutaImagen){
-    var profundidad = window.location.pathname.split('/').length - 7
+    var esGitHubPages = window.location.hostname.includes("github.io")
+    var profundidad = esGitHubPages ? window.location.pathname.split('/').length - 7
     var ruta = ""
     for (var i = 0; i < profundidad; i++) {
         ruta += "../"
