@@ -5,13 +5,13 @@ var opciones = [
 ]
 var imagen
 function obtenerRutaImagen(rutaImagen){
-    var profundidad = window.location.pathname.split('/').length - 2//Verifica la ubicacion del archivo
+    var profundidad = window.location.pathname.split('/').length - 8
     var ruta = ""
     for (var i = 0; i < profundidad; i++) {
         ruta += "../"
     }
     ruta += rutaImagen
-
+    console.log(profundidad)
     var logo = document.createElement("img")
     logo.src = ruta
     logo.alt = "Logo de la Universidad"
