@@ -13,7 +13,7 @@ function obtenerRutaImagen(rutaImagen){
     }
     var rutaCompletaImg = ruta
     rutaCompletaImg += rutaImagen
-    console.log(rutaCompletaImg)
+    
     var logo = document.createElement("img")
     logo.src = rutaCompletaImg
     logo.alt = "Logo de la Universidad"

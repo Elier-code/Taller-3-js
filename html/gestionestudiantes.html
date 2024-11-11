@@ -6,32 +6,43 @@
     <title>GESTIONAR ESTUDIANTES</title>
     <link rel="stylesheet" href="../css/stylesfondo.css">
     <link rel="stylesheet" href="../css/stylesformulario.css">
-    <script src="../js/crearmenu.js">
-        logo.src = "../recursos/image/logo.png"
-    </script>
+    <script src="../js/crearmenu.js"></script>
+    <script src="../js/estudiante.js"></script>
+    <script src="../js/gestionarestudiantes.js"></script>
+    <script src="../js/utilidades.js"></script>
+    <style>
+        .contenido{
+            display: flex;
+            text-align: center;
+            align-items: center;
+        }
+    </style>
 </head>
 <body>
     <div class="contenedor">
         <div class="nav"></div>
-        
-        <div class="formulario">
-            <form action="">
-                <h2>GESTIONAR ESTUDIANTES</h2>
-                <label for="idEstudiante">ID Estudiante :</label>
-                <input type="text" id="idEstudiante" required>
-                <label for="nombreEstudiante">Nombre Estudiante:</label>
-                <input type="text" id="nombreEstudiante" required pattern="^[A-Za-z]+$">
-                <label for="fechaNacimiento">Fecha Naciemiento</label>
-                <input type="date" id="fechaNacimiento" required pattern="^(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/(19|20)\d{2}$">
-                <label for="correo">Email:</label>
-                <input type="email" id="correo" required>
-                <label for="telefono">Telfono:</label>
-                <input type="text" id="telefono" pattern="^\d{8,15}$">
-            </form>
-            <button>Guardar</button>
-            <button>Actualizar</button>
-            <button>Eliminar</button>
-            <button>Consultar</button>
+
+        <div class="contenido">
+            <div class="formulario">
+                <form action="">
+                    <h2>GESTIONAR ESTUDIANTES</h2>
+                    <label for="idEstudiante">ID Estudiante :</label>
+                    <input type="text" id="idEstudiante" required>
+                    <label for="nombreEstudiante">Nombre Estudiante:</label>
+                    <input type="text" id="nombreEstudiante" required pattern="^[A-Za-z]+$">
+                    <label for="fechaNacimiento">Fecha Naciemiento</label>
+                    <input type="date" id="fechaNacimiento" required pattern="^(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/(19|20)\d{2}$">
+                    <label for="correo">Email:</label>
+                    <input type="email" id="correo" required>
+                    <label for="telefono">Telfono:</label>
+                    <input type="text" id="telefono" pattern="^\d{8,15}$">
+                </form>
+                <button onclick="guardar()">Guardar</button>
+                <button onclick="actualizar()">Actualizar</button>
+                <button onclick="eliminar()">Eliminar</button>
+                <button onclick="consultar()">Consultar</button>
+            </div>
+            <!-- <article style="background-color: black; width: 500px; height: 200px; margin: auto; margin-left: -15%;"></article> -->
         </div>
     </div>
 </body>
