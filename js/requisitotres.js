@@ -10,3 +10,4 @@ function agregarIDentificacores(){
         listaEstudiantes.add(opcionEstudiantes)
     }
 }
+document.addEventListener('DOMContentLoaded',agregarIDentificacores())
