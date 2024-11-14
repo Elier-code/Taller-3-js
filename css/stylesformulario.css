@@ -36,17 +36,17 @@ button:nth-child(4):active{
 button:active{
     background-color: #2ECC71;
 }
-input{
+input,select{
     border-radius: 7px;
     outline: none;
     font-size: 20px;
 }
-input:focus{
+input:focus,select:focus{
     outline: 4px solid #096402;
     border: none;
     background-color: #f8f9fa6d;
 }
-input:hover{
+input:hover,select:hover{
     background-color: #f8f9fa6d;
     border: 5px solid #32b729;
 }

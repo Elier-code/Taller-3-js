@@ -6,11 +6,16 @@
     <link rel="stylesheet" href="../css/stylesfondo.css">
     <link rel="stylesheet" href="../css/stylesformulario.css">
     <script src="../js/crearmenu.js"></script>
+    <script src="../js/utilidades.js"></script>
+    <script src="../js/matricula.js"></script>
+    <script src="../js/gestionarmatriculas.js"></script>
     <title>Gestion de Matriculas</title>
 </head>
 <body>
     <div class="contenedor">
-        <div class="nav"></div>
+        <div class="nav">
+            <a href="../index.html" id="logo"></a>
+        </div>
         <div class="formulario">
             <form action="">
                 <h2>Gestion de Matriculas</h2>
@@ -22,19 +27,19 @@
                 <input type="text" id="codgPrograma" required>
                 <label for="fecha">Fecha de Matricula:</label>
                 <input type="date" id="fecha">
-                <label for="modalidad">Estado de Matricula:</label>
-                <input list="estado">
-                <datalist list="estado" id="estado">
-                    <option value="Activa"></option>
-                    <option value="En Proceso"></option>
-                    <option value="Finalizada"></option>
-                    <option value="Cancelada"></option>
-                </datalist>
+                <label for="estado">Estado de Matricula:</label>
+                <select id="estado" name="options">
+                    <option value=""></option>
+                    <option value="activa">Activa</option>
+                    <option value="en proceso">En proceso</option>
+                    <option value="finalizada">Finalizada</option>
+                    <option value="cancelada">Cancelada</option>
+                </select>
             </form>
-            <button>Guardar</button>
-            <button>Actualizar</button>
-            <button>Eliminar</button>
-            <button>Consultar</button>
+            <button onclick="guardar()">Guardar</button>
+            <button onclick="actualizar()">Actualizar</button>
+            <button onclick="eliminar()">Eliminar</button>
+            <button onclick="consultar()">Consultar</button>
         </div>
     </div>
 </body>

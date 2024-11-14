@@ -1,4 +1,4 @@
-class ProgramaAcadenico{
+class ProgramaAcademico{
     constructor(codPrograma,nomPrograma,duracion,modalidad,fechaInicio){
         this.codPrograma = codPrograma;
         this.nomPrograma = nomPrograma;

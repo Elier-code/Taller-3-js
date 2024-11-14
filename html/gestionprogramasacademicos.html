@@ -6,11 +6,16 @@
     <link rel="stylesheet" href="../css/stylesfondo.css">
     <link rel="stylesheet" href="../css/stylesformulario.css">
     <script src="../js/crearmenu.js"></script>
+    <script src="../js/utilidades.js"></script>
+    <script src="../js/programaacademico.js"></script>
+    <script src="../js/gestionarprogramasacademicos.js"></script>
     <title>Gestionar Programas Academicos</title>
 </head>
 <body>
     <div class="contenedor">
-        <div class="nav"></div>
+        <div class="nav">
+            <a href="../index.html" id="logo"></a>
+        </div>
         <div class="formulario">
             <form action="">
                 <h2>Gestionar Programas Academicos</h2>
@@ -21,19 +26,21 @@
                 <label for="duracion">Duracion :</label>
                 <input type="number" id="duracion" required>
                 <label for="modalidad">Modalidad:</label>
-                <input list="modalidad">
-                <datalist list="modalidad" id="modalidad">
-                    <option value="Presencial"></option>
-                    <option value="Virtual"></option>
-                    <option value="Semipresencial"></option>
-                </datalist>
+                <select id="modalidad" name="options">
+                    <option value=""></option>
+                    <option value="presencial">Presencial</option>
+                    <option value="virtual">Virtual</option>
+                    <option value="semipresencial">Semipresencial</option>
+                </select>
+
                 <label for="fecha">Fecha de inicio:</label>
                 <input type="date" id="fecha">
             </form>
-            <button>Guardar</button>
-            <button>Actualizar</button>
-            <button>Eliminar</button>
-            <button>Consultar</button>
+            <button onclick="guardar()">Guardar</button>
+            <button onclick="actualizar()">Actualizar</button>
+            <button onclick="eliminar()">Eliminar</button>
+            <button onclick="consultar()">Consultar</button>
+
         </div>
     </div>
 </body>

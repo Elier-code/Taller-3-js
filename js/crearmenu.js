@@ -13,7 +13,7 @@ function obtenerRutaImagen(rutaImagen){
     }
     var rutaCompletaImg = ruta
     rutaCompletaImg += rutaImagen
-    
+
     var logo = document.createElement("img")
     logo.src = rutaCompletaImg
     logo.alt = "Logo de la Universidad"
@@ -26,15 +26,16 @@ function obtenerRutaImagen(rutaImagen){
 document.addEventListener('DOMContentLoaded',() => {
     var contenedor = document.getElementsByClassName("nav")[0]
     var menu = document.createElement("nav")
+    var logo = document.getElementById("logo")
     obtenerRutaImagen("recursos/image/logo.png")
     opciones.forEach(opcion => {
         var enlase = document.createElement("a")
         enlase.href = opcion[1]
         enlase.textContent = opcion[0]
         enlase.id = "opciones"
-        enlase.target = "__blank"
+        enlase.target = "_blank"
         menu.appendChild(enlase)
     })
-    contenedor.appendChild(imagen)
+    logo.appendChild(imagen)
     contenedor.appendChild(menu)
 })
