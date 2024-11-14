@@ -17,7 +17,7 @@ function limpiarFormulario(){
 function guardar(){
     recuperarDatosFormulario()
     if (!validarFecha(fechaInicio.value)) {
-        alert("Por favor ingresa una fecha válida en el formato dd/mm/yyyy y que no sea futura.")
+        alert("Por favor ingresa una fecha válida que no sea futura.")
         return;
     }else{
         var programa = new ProgramaAcademico(codPrograma.value, nomPrograma.value, duracion.value, modalidad.value, fechaInicio.value)
@@ -41,16 +41,21 @@ function consultar(){
 
 function actualizar(){
     recuperarDatosFormulario()
-    var indicePrograma = buscarIndicePrograma()
-    if (indicePrograma != -1) {
-        programas[indicePrograma].nomPrograma = nomPrograma.value
-        programas[indicePrograma].fechaInicio = fechaInicio.value
-        programas[indicePrograma].duracion = duracion.value
-        programas[indicePrograma].modalidad = modalidad.value
+    if (!validarFecha(fechaInicio.value)) {
+        alert("Por favor ingresa una fecha válida que no sea futura.")
+    } else {
+
+        var indicePrograma = buscarIndicePrograma()
+        if (indicePrograma != -1) {
+            programas[indicePrograma].nomPrograma = nomPrograma.value
+            programas[indicePrograma].fechaInicio = fechaInicio.value
+            programas[indicePrograma].duracion = duracion.value
+            programas[indicePrograma].modalidad = modalidad.value
+        }
+        setJSONDeLocalStore(localStorage, programas)
+        limpiarFormulario()
+        alert("El programa academico ha sido actualizado correctamente")
     }
-    setJSONDeLocalStore(localStorage, programas)
-    limpiarFormulario()
-    alert("El programa academico ha sido actualizado correctamente")
 }
 
 function eliminar(){

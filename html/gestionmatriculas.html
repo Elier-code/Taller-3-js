@@ -9,6 +9,8 @@
     <script src="../js/utilidades.js"></script>
     <script src="../js/matricula.js"></script>
     <script src="../js/gestionarmatriculas.js"></script>
+    <script src="../js/estudiante.js"></script>
+    <script src="../js/requisitotres.js"></script>
     <title>Gestion de Matriculas</title>
 </head>
 <body>
@@ -22,7 +24,9 @@
                 <label for="codgMatricula">Codigo Matricula :</label>
                 <input type="text" id="codgMatricula" required>
                 <label for="idEstudiante">ID Estudiante :</label>
-                <input type="text" id="idEstudiante" required>
+                <select id="idEstudiante" required>
+                    
+                </select>
                 <label for="codgPrograma">Codigo Programa :</label>
                 <input type="text" id="codgPrograma" required>
                 <label for="fecha">Fecha de Matricula:</label>
@@ -42,5 +46,8 @@
             <button onclick="consultar()">Consultar</button>
         </div>
     </div>
+    <script>
+        agregarIDentificacores()
+    </script>
 </body>
 </html>

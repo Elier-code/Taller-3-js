@@ -17,8 +17,8 @@ function limpiarFormulario(){
 
 function guardar(){
     recuperarDatosFormulario()
-    if (!validarFecha(fecha.value)) {
-        alert("Por favor ingresa una fecha válida en el formato dd/mm/yyyy y que no sea futura.")
+    if (validarFecha(fecha.value)) {
+        alert("Por favor ingresa una fecha que no sea pasada.")
         return;
     }else{
         var matricula = new Matricula(idMatricula.value, idEstudiante.value, codPrograma.value, fecha.value, estado.value)
@@ -42,16 +42,21 @@ function consultar(){
 
 function actualizar(){
     recuperarDatosFormulario()
-    var indiceMatricula = buscarIndiceMatricula()
-    if (indiceMatricula != -1) {
-        matriculas[indiceMatricula].idEstudiante = idEstudiante.value
-        matriculas[indiceMatricula].codPrograma = codPrograma.value
-        matriculas[indiceMatricula].fechaMatricula = fecha.value
-        matriculas[indiceMatricula].estado = estado.value
+    if (!validarFecha(fecha.value,patronFechaRequerida)) {
+        alert("Por favor ingresa una fecha válida que no sea pasada.")
+        return;
+    } else {
+        var indiceMatricula = buscarIndiceMatricula()
+        if (indiceMatricula != -1) {
+            matriculas[indiceMatricula].idEstudiante = idEstudiante.value
+            matriculas[indiceMatricula].codPrograma = codPrograma.value
+            matriculas[indiceMatricula].fechaMatricula = fecha.value
+            matriculas[indiceMatricula].estado = estado.value
+        }
+        setJSONDeLocalStore(localStorage, matriculas)
+        limpiarFormulario()
+        alert("La matricula ha sido actualizado correctamente")
     }
-    setJSONDeLocalStore(localStorage, matriculas)
-    limpiarFormulario()
-    alert("La matricula ha sido actualizado correctamente")
 }
 function eliminar(){
     recuperarDatosFormulario()
