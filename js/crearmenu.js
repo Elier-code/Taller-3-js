@@ -33,7 +33,6 @@ document.addEventListener('DOMContentLoaded',() => {
         enlase.href = opcion[1]
         enlase.textContent = opcion[0]
         enlase.id = "opciones"
-        enlase.target = "_blank"
         menu.appendChild(enlase)
     })
     logo.appendChild(imagen)
